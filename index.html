@@ -1,86 +1,115 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SMK Muhammadiyah 1 Kalasan</title>
 
-<!-- Google Fonts -->
+<!-- ===================================================== -->
+<!-- META & PENGATURAN DASAR HALAMAN -->
+<!-- ===================================================== -->
+
+<meta charset="UTF-8"> <!-- Mengatur karakter encoding agar mendukung huruf & simbol -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Agar responsive di HP -->
+<title>SMK Muhammadiyah 1 Kalasan</title> <!-- Judul tab browser -->
+
+<!-- ===================================================== -->
+<!-- GOOGLE FONTS (IMPORT FONT) -->
+<!-- ===================================================== -->
+
+<!-- Font Poppins (modern clean) & Playfair (premium elegant) -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
+<!-- ===================================================== -->
+<!-- FONT AWESOME (UNTUK ICON) -->
+<!-- ===================================================== -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- ===================================================== -->
+<!-- STYLE CSS INTERNAL -->
+<!-- ===================================================== -->
 
 <style>
 
+/* ===================================================== */
+/* RESET & GLOBAL SETTING */
+/* ===================================================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+margin:0; /* Menghapus margin default browser */
+padding:0; /* Menghapus padding default */
+box-sizing:border-box; /* Agar padding tidak menambah ukuran */
+scroll-behavior:smooth; /* Smooth scroll saat klik menu */
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#0b1d3a;
-color:#fff;
-overflow-x:hidden;
+font-family:'Poppins',sans-serif; /* Font utama */
+background:#0b1d3a; /* Background biru gelap premium */
+color:#fff; /* Warna teks putih */
+overflow-x:hidden; /* Mencegah scroll horizontal */
 }
 
-/* NAVBAR */
+/* ===================================================== */
+/* NAVBAR / HEADER */
+/* ===================================================== */
+
 nav{
-position:fixed;
+position:fixed; /* Navbar tetap di atas saat scroll */
 width:100%;
 padding:20px 8%;
 display:flex;
-justify-content:space-between;
+justify-content:space-between; /* Logo kiri, menu kanan */
 align-items:center;
-background:rgba(11,29,58,0.8);
-backdrop-filter:blur(10px);
-z-index:1000;
+background:rgba(11,29,58,0.8); /* Transparan */
+backdrop-filter:blur(10px); /* Efek blur premium */
+z-index:1000; /* Supaya selalu di atas */
 }
 
 nav h1{
-font-family:'Playfair Display',serif;
+font-family:'Playfair Display',serif; /* Font premium */
 font-size:22px;
-color:#d4af37;
+color:#d4af37; /* Warna emas */
 }
 
 nav ul{
 display:flex;
 gap:30px;
-list-style:none;
+list-style:none; /* Hilangkan bullet */
 }
 
 nav ul li a{
-text-decoration:none;
+text-decoration:none; /* Hilangkan garis bawah */
 color:#fff;
 font-weight:500;
-transition:0.3s;
+transition:0.3s; /* Animasi hover */
 }
 
 nav ul li a:hover{
-color:#d4af37;
+color:#d4af37; /* Hover warna emas */
 }
 
-/* HERO */
+/* ===================================================== */
+/* HERO SECTION (BAGIAN UTAMA ATAS) */
+/* ===================================================== */
+
 .hero{
-height:100vh;
+height:100vh; /* Full layar */
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
 padding:0 20px;
+
+/* Background gambar + overlay gelap */
 background:linear-gradient(rgba(11,29,58,0.85),rgba(11,29,58,0.9)),
 url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
+
+background-size:cover; /* Penuh layar */
+background-position:center; /* Posisi tengah */
 }
 
 .hero h2{
 font-family:'Playfair Display',serif;
-font-size:60px;
-color:#d4af37;
+font-size:60px; /* Judul besar */
+color:#d4af37; /* Warna emas */
 margin-bottom:20px;
 }
 
@@ -89,12 +118,16 @@ font-size:18px;
 max-width:700px;
 margin:auto;
 margin-bottom:30px;
-opacity:0.85;
+opacity:0.85; /* Sedikit transparan */
 }
+
+/* ===================================================== */
+/* BUTTON STYLE */
+/* ===================================================== */
 
 .btn{
 padding:14px 35px;
-border-radius:40px;
+border-radius:40px; /* Rounded full */
 border:2px solid #d4af37;
 background:transparent;
 color:#d4af37;
@@ -106,10 +139,13 @@ transition:0.4s;
 .btn:hover{
 background:#d4af37;
 color:#0b1d3a;
-box-shadow:0 0 25px rgba(212,175,55,0.7);
+box-shadow:0 0 25px rgba(212,175,55,0.7); /* Glow emas */
 }
 
-/* SECTION */
+/* ===================================================== */
+/* SECTION UMUM */
+/* ===================================================== */
+
 section{
 padding:100px 10%;
 text-align:center;
@@ -122,15 +158,18 @@ color:#d4af37;
 margin-bottom:60px;
 }
 
-/* CARDS */
+/* ===================================================== */
+/* CARD PROGRAM KEAHLIAN */
+/* ===================================================== */
+
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); /* Responsive grid */
 gap:40px;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,0.05); /* Transparan elegan */
 padding:40px;
 border-radius:20px;
 border:1px solid rgba(212,175,55,0.3);
@@ -138,7 +177,7 @@ transition:0.4s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-10px); /* Efek naik */
 box-shadow:0 0 30px rgba(212,175,55,0.5);
 }
 
@@ -152,7 +191,10 @@ margin-bottom:20px;
 margin-bottom:15px;
 }
 
+/* ===================================================== */
 /* FOOTER */
+/* ===================================================== */
+
 footer{
 background:#071428;
 padding:40px;
@@ -161,22 +203,36 @@ font-size:14px;
 opacity:0.7;
 }
 
-/* RESPONSIVE */
+/* ===================================================== */
+/* RESPONSIVE MOBILE */
+/* ===================================================== */
+
 @media(max-width:768px){
+
 .hero h2{
-font-size:35px;
+font-size:35px; /* Judul lebih kecil di HP */
 }
+
 nav ul{
-display:none;
+display:none; /* Menu disembunyikan (belum pakai hamburger) */
 }
+
 }
 
 </style>
 </head>
+
+<!-- ===================================================== -->
+<!-- BODY HALAMAN WEBSITE -->
+<!-- ===================================================== -->
+
 <body>
 
+<!-- ================= NAVBAR ================= -->
 <nav>
 <h1>SMK MUH 1 KALASAN</h1>
+
+<!-- Menu Navigasi -->
 <ul>
 <li><a href="#">Beranda</a></li>
 <li><a href="#jurusan">Jurusan</a></li>
@@ -184,6 +240,7 @@ display:none;
 </ul>
 </nav>
 
+<!-- ================= HERO SECTION ================= -->
 <section class="hero">
 <div>
 <h2>SMK Muhammadiyah 1 Kalasan</h2>
@@ -192,22 +249,27 @@ display:none;
 </div>
 </section>
 
+<!-- ================= SECTION JURUSAN ================= -->
 <section id="jurusan">
 <h2 class="section-title">Program Keahlian</h2>
+
 <div class="cards">
 
+<!-- Card 1 -->
 <div class="card">
 <i class="fas fa-ship"></i>
 <h3>Teknika Kapal Niaga</h3>
 <p>Mencetak tenaga ahli mesin kapal profesional bertaraf internasional.</p>
 </div>
 
+<!-- Card 2 -->
 <div class="card">
 <i class="fas fa-compass"></i>
 <h3>Nautika Kapal Niaga</h3>
 <p>Mendidik calon navigator dan perwira kapal niaga yang kompeten.</p>
 </div>
 
+<!-- Card 3 -->
 <div class="card">
 <i class="fas fa-music"></i>
 <h3>Seni Musik Modern</h3>
@@ -217,9 +279,42 @@ display:none;
 </div>
 </section>
 
+<!-- ================= FOOTER ================= -->
 <footer id="kontak">
 © 2026 SMK Muhammadiyah 1 Kalasan | Islamic Premium Design 👑
 </footer>
+<!-- ===================================================== -->
+<!-- =================== KONTAK & MAP ==================== -->
+<!-- ===================================================== -->
+
+<!-- ===================================== -->
+<!-- FOOTER - LOKASI SEKOLAH -->
+<!-- ===================================== -->
+<section class="map-section">
+
+    <h2>Lokasi Sekolah Kami</h2>
+
+    <!-- Container Maps -->
+    <div class="map-container fade-in">
+
+        <!-- Google Maps Embed Resmi -->
+        <iframe 
+            src="https://www.google.com/maps?q=SMK+Muhammadiyah+1+Kalasan,+Sleman,+Yogyakarta&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+    </div>
+
+    <!-- Tombol Buka Maps -->
+    <div class="map-button">
+        <a href="https://www.google.com/maps/place/SMK+Muhammadiyah+1+Kalasan"
+           target="_blank"
+           class="btn-maps">
+           📍 Buka di Google Maps
+        </a>
+    </div>
 
 </body>
 </html>
