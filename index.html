@@ -1,326 +1,244 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK Muhammadiyah 1 Kalasan</title>
 
-<!-- ===================================================== -->
-<!-- META & PENGATURAN DASAR HALAMAN -->
-<!-- ===================================================== -->
+    <!-- Google Font Elegant -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<meta charset="UTF-8"> <!-- Mengatur karakter encoding agar mendukung huruf & simbol -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Agar responsive di HP -->
-<title>SMK Muhammadiyah 1 Kalasan</title> <!-- Judul tab browser -->
+    <!-- Icon 3D Style (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- ===================================================== -->
-<!-- GOOGLE FONTS (IMPORT FONT) -->
-<!-- ===================================================== -->
-
-<!-- Font Poppins (modern clean) & Playfair (premium elegant) -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-<!-- ===================================================== -->
-<!-- FONT AWESOME (UNTUK ICON) -->
-<!-- ===================================================== -->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- ===================================================== -->
-<!-- STYLE CSS INTERNAL -->
-<!-- ===================================================== -->
-
-<style>
-
-/* ===================================================== */
-/* RESET & GLOBAL SETTING */
-/* ===================================================== */
-
-*{
-margin:0; /* Menghapus margin default browser */
-padding:0; /* Menghapus padding default */
-box-sizing:border-box; /* Agar padding tidak menambah ukuran */
-scroll-behavior:smooth; /* Smooth scroll saat klik menu */
-}
-
-body{
-font-family:'Poppins',sans-serif; /* Font utama */
-background:#0b1d3a; /* Background biru gelap premium */
-color:#fff; /* Warna teks putih */
-overflow-x:hidden; /* Mencegah scroll horizontal */
-}
-
-/* ===================================================== */
-/* NAVBAR / HEADER */
-/* ===================================================== */
-
-nav{
-position:fixed; /* Navbar tetap di atas saat scroll */
-width:100%;
-padding:20px 8%;
-display:flex;
-justify-content:space-between; /* Logo kiri, menu kanan */
-align-items:center;
-background:rgba(11,29,58,0.8); /* Transparan */
-backdrop-filter:blur(10px); /* Efek blur premium */
-z-index:1000; /* Supaya selalu di atas */
-}
-
-nav h1{
-font-family:'Playfair Display',serif; /* Font premium */
-font-size:22px;
-color:#d4af37; /* Warna emas */
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none; /* Hilangkan bullet */
-}
-
-nav ul li a{
-text-decoration:none; /* Hilangkan garis bawah */
-color:#fff;
-font-weight:500;
-transition:0.3s; /* Animasi hover */
-}
-
-nav ul li a:hover{
-color:#d4af37; /* Hover warna emas */
-}
-
-/* ===================================================== */
-/* HERO SECTION (BAGIAN UTAMA ATAS) */
-/* ===================================================== */
-
-.hero{
-height:100vh; /* Full layar */
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 20px;
-
-/* Background gambar + overlay gelap */
-background:linear-gradient(rgba(11,29,58,0.85),rgba(11,29,58,0.9)),
-url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80');
-
-background-size:cover; /* Penuh layar */
-background-position:center; /* Posisi tengah */
-}
-
-.hero h2{
-font-family:'Playfair Display',serif;
-font-size:60px; /* Judul besar */
-color:#d4af37; /* Warna emas */
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:18px;
-max-width:700px;
-margin:auto;
-margin-bottom:30px;
-opacity:0.85; /* Sedikit transparan */
-}
-
-/* ===================================================== */
-/* BUTTON STYLE */
-/* ===================================================== */
-
-.btn{
-padding:14px 35px;
-border-radius:40px; /* Rounded full */
-border:2px solid #d4af37;
-background:transparent;
-color:#d4af37;
-font-weight:600;
-cursor:pointer;
-transition:0.4s;
-}
-
-.btn:hover{
-background:#d4af37;
-color:#0b1d3a;
-box-shadow:0 0 25px rgba(212,175,55,0.7); /* Glow emas */
-}
-
-/* ===================================================== */
-/* SECTION UMUM */
-/* ===================================================== */
-
-section{
-padding:100px 10%;
-text-align:center;
-}
-
-.section-title{
-font-family:'Playfair Display',serif;
-font-size:40px;
-color:#d4af37;
-margin-bottom:60px;
-}
-
-/* ===================================================== */
-/* CARD PROGRAM KEAHLIAN */
-/* ===================================================== */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); /* Responsive grid */
-gap:40px;
-}
-
-.card{
-background:rgba(255,255,255,0.05); /* Transparan elegan */
-padding:40px;
-border-radius:20px;
-border:1px solid rgba(212,175,55,0.3);
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-10px); /* Efek naik */
-box-shadow:0 0 30px rgba(212,175,55,0.5);
-}
-
-.card i{
-font-size:45px;
-color:#d4af37;
-margin-bottom:20px;
-}
-
-.card h3{
-margin-bottom:15px;
-}
-
-/* ===================================================== */
-/* FOOTER */
-/* ===================================================== */
-
-footer{
-background:#071428;
-padding:40px;
-text-align:center;
-font-size:14px;
-opacity:0.7;
-}
-
-/* ===================================================== */
-/* RESPONSIVE MOBILE */
-/* ===================================================== */
-
-@media(max-width:768px){
-
-.hero h2{
-font-size:35px; /* Judul lebih kecil di HP */
-}
-
-nav ul{
-display:none; /* Menu disembunyikan (belum pakai hamburger) */
-}
-
-}
-
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<!-- ===================================================== -->
-<!-- BODY HALAMAN WEBSITE -->
-<!-- ===================================================== -->
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav>
-<h1>SMK MUH 1 KALASAN</h1>
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <div class="logo-area">
+        <img src="assets/logo.png" alt="Logo Sekolah" class="logo">
+        <h1>SMK Muhammadiyah 1 Kalasan</h1>
+    </div>
 
-<!-- Menu Navigasi -->
-  <!-- Menu Navigasi -->
-    <ul class="nav-links">
-        <li><a href="#home"><i class="fas fa-house icon-3d"></i> Beranda</a></li>
-        <li><a href="#profil"><i class="fas fa-school icon-3d"></i> Profil</a></li>
-        <li><a href="#jurusan"><i class="fas fa-graduation-cap icon-3d"></i> Jurusan</a></li>
-        <li><a href="#video"><i class="fas fa-video icon-3d"></i> Video</a></li>
-        <li><a href="#audio"><i class="fas fa-music icon-3d"></i> Mars</a></li>
-        <li><a href="#alumni"><i class="fas fa-user-group icon-3d"></i> Alumni</a></li>
-        <li><a href="#kontak"><i class="fas fa-phone icon-3d"></i> Kontak</a></li>
-    </ul>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#"><i class="fas fa-home icon3d"></i> Dashboard</a></li>
+            <li><a href="#tentang"><i class="fas fa-school icon3d"></i> Tentang</a></li>
+            <li><a href="#jurusan"><i class="fas fa-book icon3d"></i> Jurusan</a></li>
+            <li><a href="#ppdb"><i class="fas fa-user-plus icon3d"></i> PPDB</a></li>
+            <li><a href="#kontak"><i class="fas fa-phone icon3d"></i> Kontak</a></li>
+        </ul>
+    </nav>
+</header>
 
-</nav>
-
-<!-- ================= HERO SECTION ================= -->
+<!-- ================= HERO DASHBOARD ================= -->
 <section class="hero">
-<div>
-<h2>SMK Muhammadiyah 1 Kalasan</h2>
-<p>Sekolah Unggul Islami Berkarakter yang Membentuk Generasi Profesional dan Berakhlak Mulia.</p>
-<button class="btn">Daftar Sekarang</button>
-</div>
+
+    <div class="overlay-content">
+        <h2>Selamat Datang di Website Resmi</h2>
+        <p>Sekolah Maritim dan Seni Unggulan di Kalasan</p>
+
+        <!-- Digital Clock -->
+        <div class="clock-box">
+            <div id="digital-clock"></div>
+            <div id="date-info"></div>
+        </div>
+    </div>
+
 </section>
 
-<!-- ================= SECTION JURUSAN ================= -->
-<section id="jurusan">
-<h2 class="section-title">Program Keahlian</h2>
+<!-- ================= PENGUMUMAN ================= -->
+<section class="pengumuman">
+    <h2>Papan Informasi</h2>
+    <div class="pengumuman-box">
+        <img src="assets/pengumuman.jpg" alt="Pengumuman">
+        <p>Pengumuman terbaru sekolah akan ditampilkan di sini.</p>
+    </div>
+</section>
 
-<div class="cards">
+<!-- ================= TENTANG SEKOLAH ================= -->
+<section id="tentang" class="tentang">
+    <h2>Tentang SMK Muhammadiyah 1 Kalasan</h2>
+    <div class="content-box">
+        <p>
+            SMK Muhammadiyah 1 Kalasan adalah sekolah menengah kejuruan yang 
+            berkomitmen mencetak lulusan unggul di bidang kemaritiman dan seni.
+            Dengan fasilitas modern serta tenaga pengajar profesional, 
+            sekolah ini terus berkembang menjadi institusi pendidikan terbaik.
+        </p>
+    </div>
+</section>
 
-<!-- Card 1 -->
-<div class="card">
-<i class="fas fa-ship"></i>
-<h3>Teknika Kapal Niaga</h3>
-<p>Mencetak tenaga ahli mesin kapal profesional bertaraf internasional.</p>
-</div>
+<!-- ================= SAMBUTAN KEPALA SEKOLAH ================= -->
+<section class="kepsek">
+    <h2>Sambutan Kepala Sekolah</h2>
+    <div class="kepsek-box">
+        <img src="assets/kepsek.jpg" alt="Kepala Sekolah">
+        <div>
+            <h3>Nama Kepala Sekolah</h3>
+            <p>
+                Selamat datang di SMK Muhammadiyah 1 Kalasan. 
+                Kami berkomitmen membentuk generasi berakhlak mulia, 
+                berkompetensi tinggi, dan siap bersaing di dunia kerja global.
+            </p>
+        </div>
+    </div>
+</section>
 
-<!-- Card 2 -->
-<div class="card">
-<i class="fas fa-compass"></i>
-<h3>Nautika Kapal Niaga</h3>
-<p>Mendidik calon navigator dan perwira kapal niaga yang kompeten.</p>
-</div>
+<!-- ================= JURUSAN ================= -->
+<section id="jurusan" class="jurusan">
+    <h2>Program Keahlian</h2>
 
-<!-- Card 3 -->
-<div class="card">
-<i class="fas fa-music"></i>
-<h3>Seni Musik Modern</h3>
-<p>Mengembangkan kreativitas musik modern berbasis industri digital.</p>
-</div>
+    <div class="jurusan-container">
 
-</div>
+        <div class="jurusan-card">
+            <h3>Nautika Kapal Niaga</h3>
+            <p>
+                Jurusan ini membekali siswa dengan keahlian navigasi,
+                pengoperasian kapal niaga, keselamatan pelayaran,
+                meteorologi maritim, serta praktik langsung di dunia industri.
+                Lulusan siap bekerja di kapal nasional maupun internasional.
+            </p>
+        </div>
+
+        <div class="jurusan-card">
+            <h3>Teknika Kapal Niaga</h3>
+            <p>
+                Fokus pada sistem permesinan kapal, perawatan mesin,
+                sistem tenaga dan kelistrikan kapal.
+                Siswa dilatih secara teori dan praktik dengan standar industri maritim.
+            </p>
+        </div>
+
+        <div class="jurusan-card">
+            <h3>Seni Musik</h3>
+            <p>
+                Mengembangkan bakat siswa dalam bidang musik modern dan tradisional,
+                produksi musik digital, manajemen pertunjukan,
+                serta keterampilan tampil profesional di industri kreatif.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= STATISTIK ================= -->
+<section class="statistik">
+    <h2>Data Sekolah</h2>
+    <div class="stat-box">
+        <div class="stat-item">
+            <h3>850</h3>
+            <p>Siswa</p>
+        </div>
+        <div class="stat-item">
+            <h3>65</h3>
+            <p>Guru</p>
+        </div>
+        <div class="stat-item">
+            <h3>95%</h3>
+            <p>Tingkat Kelulusan</p>
+        </div>
+    </div>
+
+    <canvas id="chartSekolah"></canvas>
+</section>
+
+<!-- ================= GURU ================= -->
+<section class="guru">
+    <h2>Tenaga Pendidik</h2>
+
+    <div class="guru-container">
+        <div class="guru-card">
+            <img src="assets/guru1.jpg" alt="">
+            <h4>Nama Guru 1</h4>
+        </div>
+
+        <div class="guru-card">
+            <img src="assets/guru1.jpg" alt="">
+            <h4>Nama Guru 2</h4>
+        </div>
+
+        <div class="guru-card">
+            <img src="assets/guru1.jpg" alt="">
+            <h4>Nama Guru 3</h4>
+        </div>
+    </div>
+</section>
+
+<!-- ================= VIDEO KEGIATAN ================= -->
+<section class="video">
+    <h2>Kegiatan Sekolah</h2>
+
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+<!-- ================= TESTIMONI ================= -->
+<section class="testimoni">
+    <h2>Testimoni Alumni</h2>
+
+    <div class="testimoni-container">
+        <div class="testimoni-card">
+            <p>
+                "Sekolah ini memberikan pengalaman luar biasa dan
+                membentuk saya menjadi pribadi yang disiplin."
+            </p>
+            <h4>- Alumni 2023</h4>
+        </div>
+    </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer id="kontak">
-© 2026 SMK Muhammadiyah 1 Kalasan | Islamic Premium Design 👑
-</footer>
-<!-- ===================================================== -->
-<!-- =================== KONTAK & MAP ==================== -->
-<!-- ===================================================== -->
 
-<!-- ===================================== -->
-<!-- FOOTER - LOKASI SEKOLAH -->
-<!-- ===================================== -->
-<section class="map-section">
+    <div class="footer-container">
 
-    <h2>Lokasi Sekolah Kami</h2>
+        <div class="footer-box">
+            <h3>PPDB</h3>
+            <p>Pendaftaran Peserta Didik Baru dibuka setiap tahun ajaran baru.</p>
+        </div>
 
-    <!-- Container Maps -->
-    <div class="map-container fade-in">
+        <div class="footer-box">
+            <h3>Kontak & Alamat</h3>
+            <p>
+                SMK Muhammadiyah 1 Kalasan<br>
+                Jl. Raya Kalasan, Yogyakarta<br>
+                Telp: 0812-xxxx-xxxx<br>
+                Email: info@smkmkalasan.sch.id
+            </p>
+        </div>
 
-        <!-- Google Maps Embed Resmi -->
+        <div class="footer-box">
+            <h3>Media Sosial</h3>
+            <p>
+                <i class="fab fa-facebook"></i> Facebook<br>
+                <i class="fab fa-instagram"></i> Instagram<br>
+                <i class="fab fa-youtube"></i> YouTube
+            </p>
+        </div>
+
+    </div>
+
+    <div class="maps">
         <iframe 
-            src="https://www.google.com/maps?q=SMK+Muhammadiyah+1+Kalasan,+Sleman,+Yogyakarta&output=embed"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.890437..."
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
-
     </div>
 
-    <!-- Tombol Buka Maps -->
-    <div class="map-button">
-        <a href="https://www.google.com/maps/place/SMK+Muhammadiyah+1+Kalasan"
-           target="_blank"
-           class="btn-maps">
-           📍 Buka di Google Maps
-        </a>
-    </div>
+    <p class="copyright">
+        © 2026 SMK Muhammadiyah 1 Kalasan - All Rights Reserved
+    </p>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
