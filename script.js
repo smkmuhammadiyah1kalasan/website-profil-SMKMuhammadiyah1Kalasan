@@ -1,104 +1,113 @@
-/* ===============================
-   ISLAMIC PREMIUM JS
-================================= */
+// ================= JAM DIGITAL =================
+function updateClock() {
+    const now = new Date();
 
-/* ========= NAVBAR SCROLL EFFECT ========= */
-window.addEventListener("scroll", function() {
-    const nav = document.querySelector("nav");
+    const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+    const bulan = ["Januari","Februari","Maret","April","Mei","Juni",
+                   "Juli","Agustus","September","Oktober","November","Desember"];
 
-    if (window.scrollY > 50) {
-        nav.style.background = "rgba(7,20,40,0.95)";
-        nav.style.boxShadow = "0 5px 20px rgba(0,0,0,0.4)";
-    } else {
-        nav.style.background = "rgba(11,29,58,0.85)";
-        nav.style.boxShadow = "none";
+    const h = hari[now.getDay()];
+    const tanggal = now.getDate();
+    const b = bulan[now.getMonth()];
+    const tahun = now.getFullYear();
+
+    let jam = now.getHours();
+    let menit = now.getMinutes();
+    let detik = now.getSeconds();
+
+    jam = jam < 10 ? "0" + jam : jam;
+    menit = menit < 10 ? "0" + menit : menit;
+    detik = detik < 10 ? "0" + detik : detik;
+
+    document.getElementById("digital-clock").innerHTML =
+        jam + ":" + menit + ":" + detik + " WIB";
+
+    document.getElementById("date-info").innerHTML =
+        h + ", " + tanggal + " " + b + " " + tahun;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+
+
+// ================= COUNTER ANIMASI STATISTIK =================
+const counters = document.querySelectorAll(".stat-item h3");
+
+counters.forEach(counter => {
+    const target = counter.innerText.replace('%','');
+    let count = 0;
+    const speed = 50;
+
+    const updateCounter = () => {
+        const increment = target / speed;
+        if (count < target) {
+            count += increment;
+            counter.innerText = Math.ceil(count) + (counter.innerText.includes('%') ? '%' : '');
+            setTimeout(updateCounter, 30);
+        } else {
+            counter.innerText = target + (counter.innerText.includes('%') ? '%' : '');
+        }
+    };
+
+    updateCounter();
+});
+
+
+// ================= CHART DATA =================
+const ctx = document.getElementById("chartSekolah").getContext("2d");
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Siswa', 'Guru', 'Kelulusan %'],
+        datasets: [{
+            label: 'Data Statistik Sekolah',
+            data: [850, 65, 95],
+            backgroundColor: [
+                '#0077b6',
+                '#00b4d8',
+                '#90e0ef'
+            ],
+            borderRadius: 10
+        }]
+    },
+    options: {
+        responsive: true,
+        animation: {
+            duration: 2000
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
     }
 });
 
 
-/* ========= SMOOTH SCROLL ========= */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href"))
-            .scrollIntoView({
-                behavior: "smooth"
-            });
-    });
-});
-
-
-/* ========= BUTTON CLICK EFFECT ========= */
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach(btn => {
-    btn.addEventListener("click", function() {
-        btn.style.transform = "scale(0.95)";
-        setTimeout(() => {
-            btn.style.transform = "scale(1)";
-        }, 150);
-    });
-});
-
-
-/* ========= SCROLL REVEAL ANIMATION ========= */
-const revealElements = document.querySelectorAll(".card, .section-title");
-
-const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-
-    revealElements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 100) {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
+// ================= ANIMASI SCROLL MUNCUL =================
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
         }
     });
-};
+}, { threshold: 0.1 });
 
-window.addEventListener("scroll", revealOnScroll);
-
-
-/* ========= INITIAL STATE REVEAL ========= */
-revealElements.forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(40px)";
-    el.style.transition = "all 0.8s ease";
+document.querySelectorAll("section").forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = "translateY(40px)";
+    section.style.transition = "all 1s ease";
+    observer.observe(section);
 });
 
 
-/* ========= SCROLL TO TOP BUTTON ========= */
-const scrollBtn = document.createElement("button");
-scrollBtn.innerHTML = "↑";
-scrollBtn.style.position = "fixed";
-scrollBtn.style.bottom = "30px";
-scrollBtn.style.right = "30px";
-scrollBtn.style.padding = "10px 15px";
-scrollBtn.style.borderRadius = "50%";
-scrollBtn.style.border = "none";
-scrollBtn.style.background = "#d4af37";
-scrollBtn.style.color = "#0b1d3a";
-scrollBtn.style.fontWeight = "bold";
-scrollBtn.style.cursor = "pointer";
-scrollBtn.style.display = "none";
-scrollBtn.style.boxShadow = "0 0 20px rgba(212,175,55,0.6)";
-scrollBtn.style.zIndex = "999";
-
-document.body.appendChild(scrollBtn);
-
-window.addEventListener("scroll", function() {
-    if (window.scrollY > 300) {
-        scrollBtn.style.display = "block";
-    } else {
-        scrollBtn.style.display = "none";
-    }
-});
-
-scrollBtn.addEventListener("click", function() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+// ================= SMOOTH SCROLL =================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href"))
+            .scrollIntoView({ behavior: "smooth" });
     });
 });
-
